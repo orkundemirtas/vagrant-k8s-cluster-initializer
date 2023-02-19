@@ -26,6 +26,8 @@ node'lar üzerinde yapılan işlemler
 > kubectl get all -n kubernetes-dashboard
 > kubectl apply -f dashboardServiceAccount.yaml
 > kubectl apply -f clusterRoleBindingDashboard.yaml
-> kubectl -n kubernetes-dashboard create token demo-admin-user
+> kubectl -n kubernetes-dashboard create token demo-user-admin
 > kubectl patch svc kubernetes-dashboard --type='json' -p '[{"op":"replace","path":"/spec/type","value":"NodePort"}]'
 ```
+
+Virtual machine'de çalıştırıldığı için Ram veya Cpu yetmediği durumda CrashLoopBackoff hatası alınabilir. Pod'un yeniden çalıştırılması lazım veya donanımsal özelliklerin yükseltilmesi. Export ile o session için komutlar çalıştırılır. Export komutları vagrant her açıldığında uygulanabilir veya sistemin yeniden çalıştırılmasına uygun hale entegre edilebilir.
